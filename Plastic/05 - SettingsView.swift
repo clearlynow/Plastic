@@ -36,32 +36,20 @@ public struct SettingsView: View {
                         Text("\(userSettings.selectedProfile.goal) actions per week")
                     }
                 }
-                
-                Section(header: Text("Colors")){
-                    Stepper(value: $userSettings.selectedProfile.colorIndex) {
-                        Text("\(userSettings.selectedProfile.colorIndex)")
-                    }
-                }
-            
-                Section(header: Text("Start Screen")){
-                    Toggle("Show start screen", isOn: $userSettings.selectedProfile.showStart)
-                }
-                
-
+                                
                 Section(header: Text("Customize Colors")){
                     Picker("Colors", selection: $userSettings.selectedProfile.colorIndex) {
                         ForEach(0 ..< colorChoices.count) {
                             (Text(colorChoices[$0].name) + Text(Image(systemName: "square.fill")).foregroundColor(colorChoices[$0].accent))
                                 .tag($0)
-                        //ForEach(colorChoices) { clr in
-                            //(Text(clr.name) + Text(Image(systemName: "square.fill")).foregroundColor(clr.accent))
-                            //Text(clr.name)
-                                //.tag(clr)
                             }
                         }
                     }
                 
-
+                Section(header: Text("Start Screen")){
+                    Toggle("Show start screen", isOn: $userSettings.selectedProfile.showStart)
+                }
+                
                 }
             }
             .navigationTitle("Settings")

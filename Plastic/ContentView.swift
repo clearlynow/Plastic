@@ -19,6 +19,12 @@ public struct CustomColors:  Identifiable, Hashable {
     var secondary: Color
 }
 
+public struct Actions:  Codable, Identifiable, Hashable {
+    public var id = UUID()
+    var name: String
+    var points: Int
+}
+
 public struct Profile: Codable, Identifiable, Hashable {
     public var id = UUID()
     var name: String
@@ -26,6 +32,8 @@ public struct Profile: Codable, Identifiable, Hashable {
     var showStart: Bool
     var goal: Int
     var streak: Int
+    var points: Int
+    var actionHistory: [Actions]
     
     init() {
         name = "name"
@@ -33,14 +41,16 @@ public struct Profile: Codable, Identifiable, Hashable {
         goal = 10
         streak = 10
         showStart = false
+        points = 0
+        actionHistory = []
     }
-    
 }
 
 
 // Custom Data
     public var colorChoices = [CustomColors]()
     public var profiles = [Profile]()
+    public var actions = [Actions]()
 
 
     func getUsers() {
@@ -54,6 +64,15 @@ public struct Profile: Codable, Identifiable, Hashable {
         
         colorChoices.append(CustomColors(name: "Blues", accent: Color(UIColor.systemTeal), background: Color(UIColor.systemBackground), primary: Color(UIColor.label), secondary: Color(UIColor.secondaryLabel)))
         colorChoices.append(CustomColors(name: "Greens", accent: Color(UIColor.systemGreen), background: Color(UIColor.systemBackground), primary: Color(UIColor.label), secondary: Color(UIColor.secondaryLabel)))
+        
+        actions.append(Actions(name: "Recycled", points: 3))
+        actions.append(Actions(name: "Picked up trash", points: 3))
+        actions.append(Actions(name: "Used a reusable water bottle ", points: 3))
+        actions.append(Actions(name: "Reused plastic", points: 3))
+        actions.append(Actions(name: "Purchased non-plastic items", points: 3))
+        actions.append(Actions(name: "Didn't use plastic all day", points: 3))
+        actions.append(Actions(name: "Used single use plastic", points: -3))
+        actions.append(Actions(name: "Threw away plastic", points: -4))
     }
 
 
@@ -65,14 +84,35 @@ class UserSettings: ObservableObject {
             //saves settings changes to profiles array where names match
             profiles.indices.filter {profiles[$0].name == selectedProfile.name}
                 .forEach {profiles[$0] = selectedProfile}
-            //UserDefaults.standard.set(selectedProfile, forKey: "profile")
+            
+            //save selectedProfile to UserDefaults
+            
+            //save profiles to UserDefaults
+            let encoder = JSONEncoder()
+            do{
+                let data = try encoder.encode(profiles)
+                UserDefaults.standard.set(data, forKey: "profiles")
+            } catch {
+                print("Nope")
+            }
         }
     }
     
     init() {
         getUsers()
         self.selectedProfile = profiles[0]
-        //self.selectedProfile = UserDefaults.standard.object(forKey: "profile") as? Profile ?? profiles[0]
+        
+        //load profiles from UserDefaults
+        if let data = UserDefaults.standard.data(forKey: "profiles") {
+            do {
+                let decoder = JSONDecoder()
+                
+                profiles = try decoder.decode([Profile].self, from: data)
+
+            } catch {
+                print("Unable to Decode")
+            }
+        }
         }
 }
 

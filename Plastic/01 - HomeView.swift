@@ -18,26 +18,41 @@ public struct HomeView: View {
 
         
         VStack {
+        
             Text("Hello \(userSettings.selectedProfile.name)!")
                 .font(.largeTitle)
                 .foregroundColor(colorChoices[userSettings.selectedProfile.colorIndex].primary)
-            Text("")
-            Text("You have made")
-                .font(.headline)
-            Text("5")
-                .font(.largeTitle)
-            Text("good decisions that help the earth!")
-                .font(.headline)
-            
             Spacer()
             
-            HStack{
-                ProgressCircle(progress:  self.$progressDecicisons)
-                    .frame(width: 150.0, height: 150.0)
-                    .padding(20.0)
-                Text("75% of your decisions help the earth")
-                }
+            VStack(alignment: .center){
+                Text("You have done")
+                Text(" \(userSettings.selectedProfile.actionHistory.count)")
+                    .font(.system(size: 60))
+                    .fontWeight(.bold)
+                Text("actions this week that help the earth")
+                    .multilineTextAlignment(.center)
+            }
+            .padding(.all)
+            .frame(width: 200.0)
+            .background(colorChoices[userSettings.selectedProfile.colorIndex].accent)
+            .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
+
+            Spacer()
             
+            VStack(alignment: .center){
+                Text("You have earned")
+                Text(" \(userSettings.selectedProfile.points)")
+                    .font(.system(size: 60))
+                    .fontWeight(.bold)
+                Text("Earth Points!")
+            }
+            .padding(.all)
+            .frame(width: 200.0)
+            .background(colorChoices[userSettings.selectedProfile.colorIndex].accent)
+
+            .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
+            
+            Spacer()
             HStack{
                 ProgressCircle(progress:  self.$progressGoal)
                     .frame(width: 150.0, height: 150.0)
