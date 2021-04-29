@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct PlasticApp: App {
+    @StateObject var userSettings = UserSettings()
+    
     var body: some Scene {
+        
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(userSettings)
+                .accentColor(Color(UIColor.systemTeal))
         }
     }
 }

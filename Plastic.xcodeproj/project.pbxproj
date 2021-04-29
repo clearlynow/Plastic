@@ -11,6 +11,13 @@
 		55942DFA2628A60E003EF510 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55942DF92628A60E003EF510 /* ContentView.swift */; };
 		55942DFC2628A610003EF510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55942DFB2628A610003EF510 /* Assets.xcassets */; };
 		55942DFF2628A610003EF510 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55942DFE2628A610003EF510 /* Preview Assets.xcassets */; };
+		55942E0F2628A84B003EF510 /* 01 - NavTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55942E0E2628A84B003EF510 /* 01 - NavTabBar.swift */; };
+		55942E142628A904003EF510 /* 01 - HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55942E132628A904003EF510 /* 01 - HomeView.swift */; };
+		55942E182628B05C003EF510 /* 05 - SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55942E172628B05C003EF510 /* 05 - SettingsView.swift */; };
+		55942E1B2629488D003EF510 /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55942E1A2629488D003EF510 /* ProgressCircle.swift */; };
+		55942E1F26294DC8003EF510 /* 02 - StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55942E1E26294DC8003EF510 /* 02 - StatsView.swift */; };
+		55942E2326295576003EF510 /* 03 - RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55942E2226295576003EF510 /* 03 - RecordsView.swift */; };
+		55942E2726295594003EF510 /* 04 - ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55942E2626295594003EF510 /* 04 - ActionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +27,13 @@
 		55942DFB2628A610003EF510 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55942DFE2628A610003EF510 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55942E002628A610003EF510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55942E0E2628A84B003EF510 /* 01 - NavTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "01 - NavTabBar.swift"; sourceTree = "<group>"; };
+		55942E132628A904003EF510 /* 01 - HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "01 - HomeView.swift"; sourceTree = "<group>"; };
+		55942E172628B05C003EF510 /* 05 - SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "05 - SettingsView.swift"; sourceTree = "<group>"; };
+		55942E1A2629488D003EF510 /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
+		55942E1E26294DC8003EF510 /* 02 - StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "02 - StatsView.swift"; sourceTree = "<group>"; };
+		55942E2226295576003EF510 /* 03 - RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "03 - RecordsView.swift"; sourceTree = "<group>"; };
+		55942E2626295594003EF510 /* 04 - ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "04 - ActionView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,13 @@
 			children = (
 				55942DF72628A60E003EF510 /* PlasticApp.swift */,
 				55942DF92628A60E003EF510 /* ContentView.swift */,
+				55942E0E2628A84B003EF510 /* 01 - NavTabBar.swift */,
+				55942E132628A904003EF510 /* 01 - HomeView.swift */,
+				55942E1E26294DC8003EF510 /* 02 - StatsView.swift */,
+				55942E2226295576003EF510 /* 03 - RecordsView.swift */,
+				55942E2626295594003EF510 /* 04 - ActionView.swift */,
+				55942E172628B05C003EF510 /* 05 - SettingsView.swift */,
+				55942E1A2629488D003EF510 /* ProgressCircle.swift */,
 				55942DFB2628A610003EF510 /* Assets.xcassets */,
 				55942E002628A610003EF510 /* Info.plist */,
 				55942DFD2628A610003EF510 /* Preview Content */,
@@ -138,7 +159,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55942E2326295576003EF510 /* 03 - RecordsView.swift in Sources */,
+				55942E182628B05C003EF510 /* 05 - SettingsView.swift in Sources */,
+				55942E2726295594003EF510 /* 04 - ActionView.swift in Sources */,
 				55942DFA2628A60E003EF510 /* ContentView.swift in Sources */,
+				55942E1F26294DC8003EF510 /* 02 - StatsView.swift in Sources */,
+				55942E0F2628A84B003EF510 /* 01 - NavTabBar.swift in Sources */,
+				55942E142628A904003EF510 /* 01 - HomeView.swift in Sources */,
+				55942E1B2629488D003EF510 /* ProgressCircle.swift in Sources */,
 				55942DF82628A60E003EF510 /* PlasticApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
